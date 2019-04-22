@@ -1,0 +1,29 @@
+FORMAT: 1A
+HOST: http://polls.apiblueprint.org/
+
+# GTU
+
+To check user signature.
+
+## Check Signature [/check]
+
+### Get if is Signed [GET]
+
+Mock Check Signature
+
++ Request (application/json)
+
+         {
+            "system": "FLY",
+            "returnTo": "http://localhost:5000"
+         }
+
++ Response 200 (application/json)
+
+    + Body
+
+            { 
+                "signed": "true",
+                "url": "http://localhost:5002/v1/pdf-version/file-by-id/5fdeefb2-378a-4090-a48d-93ab51e1a52f",
+                "gtuToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6I" 
+            }
